@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DemoApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <%= render partial: "layouts/header" %>
+      <!-- flash notification -->
+      <% flash.each do |type, msg| %>
+        <div class="alert alert-error">
+          <%= msg %>
+        </div>
+      <% end %>
+      <!-- response -->
+      <%= yield %>  
+    </div>
+  </body>
+</html>
